@@ -15,9 +15,24 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$mc-background: #c5cbbd !default;
+$mc-dark: #2d2e2d !default;
+$mc-light: #d9ddd4 !default;
+$mc-primary: #818f6e !default;
+$mc-secondary: #8b927f !default;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+//include directives style
+@import "directives/dash-card";
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+.mc-bg-color {
+  /*background: $mc-background*/
+}
+
+
 

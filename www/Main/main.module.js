@@ -5,7 +5,10 @@
 
   // Address book deps
   deps.push('Login');
-
+  deps.push('Contacts');
+  deps.push('Calendar');
+  deps.push('Message');
+  deps.push('Favourites');
 
   angular
     .module('Main', deps)
@@ -22,7 +25,8 @@
           url: '/home',
           views: {
             'menuContent': {
-              templateUrl: 'Main/templates/home.html'
+              templateUrl: 'Main/templates/home.html',
+              controller: 'DashController as DashnCtrl'
             }
           }
         });

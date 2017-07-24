@@ -1,0 +1,29 @@
+.dashCard {
+  padding: 0px;
+  border-radius: 3px;
+  height: 150px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  /*background: $mc-secondary;*/
+  /*color: $mc-light;*/
+
+  .header {
+
+    border-radius: 3px 3px 0 0;
+    color: #fff;
+    padding: 0px;
+
+    .col-66 {
+      word-wrap: initial;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .badge {
+      font-size: .60rem
+    }
+
+  }
+
+}
