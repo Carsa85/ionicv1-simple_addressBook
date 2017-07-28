@@ -2,7 +2,7 @@
 
 (function (angular) {
   angular
-    .module('AddressBookApp', ['ionic', 'Main'])
+    .module('AddressBookApp', ['ionic', 'Main', 'ionic.cloud'])
 
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
