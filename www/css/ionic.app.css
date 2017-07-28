@@ -34,6 +34,53 @@ $dark:                            #444 !default;
       overflow: hidden; }
     .dashCard .header .badge {
       font-size: .60rem; }
+  .dashCard .bg-contacts-icon {
+    position: relative; }
+  .dashCard .bg-contacts-icon:before {
+    font-family: "Ionicons";
+    content: "\f212";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07); }
+  .dashCard .bg-favourites-icon {
+    position: relative; }
+  .dashCard .bg-favourites-icon:before {
+    font-family: "Ionicons";
+    content: "\f24e";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07); }
+  .dashCard .bg-messages-icon {
+    position: relative; }
+  .dashCard .bg-messages-icon:before {
+    font-family: "Ionicons";
+    content: "\f11c";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07); }
+  .dashCard .bg-appointments-icon {
+    position: relative; }
+  .dashCard .bg-appointments-icon:before {
+    font-family: "Ionicons";
+    content: "\f117";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07); }
+
+.contacts .mc-rounded {
+  border-radius: 50%;
+  padding: 4px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px; }
 
 /*!
   Ionicons, v2.0.1

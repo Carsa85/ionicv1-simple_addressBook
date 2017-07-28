@@ -27,6 +27,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //include directives style
 @import "directives/dash-card";
 
+//include page style
+@import "contacts/contacts";
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 

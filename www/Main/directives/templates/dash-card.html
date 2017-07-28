@@ -1,19 +1,8 @@
 <div class="dashCard">
-  <div class="header positive-bg row">
-
-    <div class="col col-66">
-      {{title}}
-    </div>
-    <div class="col right">
-      <span class="badge badge-assertive">{{setBadge()}}</span>
-    </div>
-
-  </div>
-  <div class="content row">
-
-  </div>
-  <div class="footer row">
-
-  </div>
-
+  <ng-include ng-if="cardType == 1" src="'Main/directives/templates/dash-card-contacts.html'"></ng-include>
+  <ng-include ng-if="cardType == 2" src="'Main/directives/templates/dash-card-favorites.html'"></ng-include>
+  <ng-include ng-if="cardType == 3" src="'Main/directives/templates/dash-card-messages.html'"></ng-include>
+  <ng-include ng-if="cardType == 4" src="'Main/directives/templates/dash-card-appointments.html'"></ng-include>
+  <ng-include ng-if="cardType == 5" src="'Main/directives/templates/dash-card-appointment.html'"></ng-include>
+  <ng-include ng-if="cardType == 6" src="'Main/directives/templates/dash-card-contact.html'"></ng-include>
 </div>

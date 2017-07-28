@@ -26,4 +26,56 @@
 
   }
 
+  .bg-contacts-icon {
+    position:relative;
+  }
+  .bg-contacts-icon:before {
+    font-family: "Ionicons";
+    content: "\f212";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07);
+  }
+
+  .bg-favourites-icon {
+    position:relative;
+  }
+  .bg-favourites-icon:before {
+    font-family: "Ionicons";
+    content: "\f24e";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07);
+  }
+
+  .bg-messages-icon {
+    position:relative;
+  }
+  .bg-messages-icon:before {
+    font-family: "Ionicons";
+    content: "\f11c";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07);
+  }
+
+  .bg-appointments-icon {
+    position:relative;
+  }
+  .bg-appointments-icon:before {
+    font-family: "Ionicons";
+    content: "\f117";
+    left: 20px;
+    position: absolute;
+    font-size: 6rem;
+    top: 50px;
+    color: rgba(0, 0, 0, 0.07);
+  }
+
 }

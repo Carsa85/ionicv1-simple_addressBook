@@ -9,7 +9,9 @@
         restrict: 'E',
         scope: {
           title: "@",
-          bedge: "@"
+          bedge: "@",
+          cardType: "@",
+          bgIcon: "@"
         },
         templateUrl: 'Main/directives/templates/dash-card.html',
         controller: 'dashCardCtrl'
