@@ -1,4 +1,4 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="Carsa address book">
 
   <ion-contentv class="padding">
     <form ng-submit="LoginCtrl.doLogin()">
@@ -14,7 +14,15 @@
         <label class="item">
           <button class="button button-block button-positive" type="submit">Log in</button>
         </label>
+        <label class="item">
+          <p class="text-center">Sign in with socials</p>
+          <button class="button button-block button-positive" ng-click="LoginCtrl.doFbLogin()"><i class="icon ion-social-facebook"></i></button>
+          <button class="button button-block button-assertive" ng-click="LoginCtrl.doGPlusLogin()"><i class="icon ion-social-googleplus-outline"></i></button>
+          <p class="text-center">or</p>
+          <p class="text-center">Simple sign in here</p>
+        </label>
       </div>
     </form>
+
   </ion-content>
 </ion-view>

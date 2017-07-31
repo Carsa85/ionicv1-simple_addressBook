@@ -1,6 +1,6 @@
 {
   "name": "ionicv1-simple_addressBook",
-  "app_id": "",
+  "app_id": "47e3da91",
   "gulpStartupTasks": [
     "sass",
     "watch"

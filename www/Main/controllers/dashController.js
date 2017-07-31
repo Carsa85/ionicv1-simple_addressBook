@@ -5,13 +5,17 @@
   angular.module('Main')
     .controller('DashController', DashController);
   DashController.$inject =
-    ['$scope', '$log', '$state', '$ionicModal'];
+    ['$scope', '$log', '$state', '$ionicAuth', '$ionicFacebookAuth', '$ionicUser', '$ionicModal'];
 
-  function DashController($scope, $log, $state, $ionicModal) {
+  function DashController($scope, $log, $state, $ionicAuth, $ionicFacebookAuth, $ionicUser, $ionicModal) {
+
+    var vm = this;
+    vm.doLogout = _doLogout;
+
 
     $ionicModal.fromTemplateUrl('Main/templates/detail-modal.html', {
         scope: $scope,
-        animation: 'splat'
+        animation: 'slide-in-right'
       }).then(function (modal) {
         $scope.detail = modal;
       });
@@ -24,7 +28,9 @@
       $scope.detail.hide();
     };
 
-    var vm = this;
+    function _doLogout() {
+      $ionicFacebookAuth.logout();
+    }
   }
 
 })(angular);

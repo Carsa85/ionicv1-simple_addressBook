@@ -19,6 +19,7 @@
           url: '/logged',
           abstract: true,
           templateUrl: 'Main/templates/menu.html',
+          controller: 'DashController as DashnCtrl'
         })
 
         .state('logged.home', {
