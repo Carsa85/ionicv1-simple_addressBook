@@ -14,7 +14,7 @@
     vm.doSignIn = _doSignIn;
 
     $scope.signinData = {};
-    $scope.image = '/img/UserAvatar.png';
+    $scope.image = './img/UserAvatar.png';
 
     $scope.getImage = _getImage;
 
@@ -33,13 +33,17 @@
 
     function _getImage() {
       var options = {
-        quality: 50,
-        destinationType: 0,
-        sourceType: 0,
-        encodingType: 0,
-        mediaType: 0,
+        quality: 80,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.CAMERA,
         allowEdit: true,
-        correctOrientation: true
+        encodingType: Camera.EncodingType.JPEG,
+        targetWidth: 500,
+        targetHeight: 500,
+        popoverOptions: CameraPopoverOptions,
+        saveToPhotoAlbum: false,
+        correctOrientation: true,
+        cameraDirection: 1
       };
       navigator.camera.getPicture(cameraSuccess, cameraError, options);
     }
@@ -47,9 +51,16 @@
     function _doSignIn() {
 
       $ionicAuth.signup($scope.signinData).then(function () {
-        $ionicUser.set('birthdate', '5/17/1985');
-        $ionicUser.set('image', $scope.image);
-        $state.go('logged.home');
+        var details = {'email': $scope.signinData.email, 'password': $scope.signinData.password};
+
+        $ionicAuth.login('basic', details).then(function (res) {
+          $log.debug(res);
+          $ionicUser.set('birthdate', '5/17/1985');
+          $ionicUser.set('myImage', $scope.image);
+          $ionicUser.save();
+          $state.go('logged.home');
+        });
+
       }, function (err) {
         for (var e of err.details) {
           if (e === 'conflict_email') {

@@ -36,6 +36,31 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+form {
+  .item-floating-label {
+    .error-message {
+      font-size: 0.7rem;
+      color: $assertive;
+      padding-top: 5px;
+      float: right;
+    }
+    .input-label {
+      font-size: 0.7rem;
+      color: $positive;
+      float: left;
+    }
+  }
+  .item-input {
+    padding: 5px;
+    .ng-dirty.ng-invalid {
+      border-bottom: 2px solid $assertive;
+      color: $assertive;
+    }
+  }
+}
+
+
+
 .popup-container .popup {
   background-color: #f8f8f8;
 }

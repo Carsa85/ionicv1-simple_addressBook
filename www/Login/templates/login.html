@@ -7,11 +7,13 @@
       <div class="list">
         <div class="item item-input item-floating-label">
           <span class="input-label">Email</span>
-          <input type="email" ng-model="loginData.email" placeholder="Username" required>
+          <span ng-if="loginForm.email.$dirty && !loginData.email" class="error-message">Email required</span>
+          <input name="email" type="email" ng-model="loginData.email" placeholder="Email" required>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password" placeholder="Password" required>
+          <span ng-if="loginForm.pwd.$dirty && !loginData.password" class="error-message">Password required</span>
+          <input name="pwd" type="password" ng-model="loginData.password" placeholder="Password" required>
         </div>
         <div class="item">
           <button class="button button-block button-positive" ng-disabled="loginForm.$invalid" ng-click="LoginCtrl.doLogin()">Log in</button>

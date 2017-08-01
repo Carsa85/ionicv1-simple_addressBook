@@ -10,15 +10,18 @@
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">Email</span>
-          <input type="email" ng-model="signinData.email" placeholder="Email" required>
+          <span ng-if="signinForm.email.$dirty && !signinData.email" class="error-message">Email required</span>
+          <input name="email" type="email" ng-model="signinData.email" placeholder="Email" required>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="signinData.password" placeholder="Password" required>
+          <span ng-if="signinForm.pwd.$dirty && !signinData.password" class="error-message">Password required</span>
+          <input name="pwd" type="password" ng-model="signinData.password" placeholder="Password" required>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">Pepeat password</span>
-          <input type="password" ng-model="signinData.repeatPassword" placeholder="Pepeat password" required>
+          <span ng-if="signinForm.rpwd.$dirty && signinData.repeatPassword !== signinData.password" class="error-message">The passwords must maatch</span>
+          <input name="rpwd" type="password" ng-model="signinData.repeatPassword" placeholder="Pepeat password">
         </div>
         <div class="item">
           <button ng-disabled="signinForm.$invalid || signinData.repeatPassword !== signinData.password" class="button button-block button-positive" ng-click="SigninCtrl.doSignIn()">Sign in</button>
