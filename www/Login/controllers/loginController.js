@@ -15,20 +15,7 @@
     vm.doGPlusLogin = _doGPlusLogin;
 
     function _doLogin() {
-      var details = { 'email': 'carsa85@live.io', 'password': 'puppies123' };
-
-      $ionicAuth.signup(details).then(function () {
-        $state.go('logged.home');
-      }, function (err) {
-        for (var e of err.details) {
-          if (e === 'conflict_email') {
-            alert('Email already exists.');
-          } else {
-            // handle other errors
-          }
-        }
-      });
-
+      $state.go('logged.home');
     }
 
     function _doFbLogin() {

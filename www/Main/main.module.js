@@ -5,6 +5,7 @@
 
   // Address book deps
   deps.push('Login');
+  deps.push('Signin');
   deps.push('Contacts');
   deps.push('Calendar');
   deps.push('Message');

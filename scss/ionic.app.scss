@@ -28,10 +28,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "directives/dash-card";
 
 //include page style
+@import "login/login";
+@import "signin/signin";
 @import "contacts/contacts";
+
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+.popup-container .popup {
+  background-color: #f8f8f8;
+}
+
 
 .mc-bg-color {
   /*background: $mc-background*/

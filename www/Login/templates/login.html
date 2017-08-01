@@ -1,26 +1,29 @@
 <ion-view view-title="Carsa address book">
-
-  <ion-contentv class="padding">
-    <form ng-submit="LoginCtrl.doLogin()">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title text-center">Carsa address book log in</h1>
+  </ion-header-bar>
+  <ion-content class="padding login">
+    <form name="loginForm">
       <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="loginData.email" placeholder="Username" required>
+        </div>
+        <div class="item item-input item-floating-label">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-        <label class="item">
+          <input type="password" ng-model="loginData.password" placeholder="Password" required>
+        </div>
+        <div class="item">
+          <button class="button button-block button-positive" ng-disabled="loginForm.$invalid" ng-click="LoginCtrl.doLogin()">Log in</button>
+           <p class="text-center">Lost password</p>
+        </div>
+        <div class="item">
           <p class="text-center">Sign in with socials</p>
-          <button class="button button-block button-positive" ng-click="LoginCtrl.doFbLogin()"><i class="icon ion-social-facebook"></i></button>
-          <button class="button button-block button-assertive" ng-click="LoginCtrl.doGPlusLogin()"><i class="icon ion-social-googleplus-outline"></i></button>
+          <button class="button button-block button-facebook" ng-click="LoginCtrl.doFbLogin()"><i class="icon ion-social-facebook"></i></button>
+          <button class="button button-block button-gPlus" ng-click="LoginCtrl.doGPlusLogin()"><i class="icon ion-social-googleplus-outline"></i></button>
           <p class="text-center">or</p>
-          <p class="text-center">Simple sign in here</p>
-        </label>
+          <a ui-sref="signin"><h3 class="text-center positive">Simple sign in here</h3></a>
+        </div>
       </div>
     </form>
 

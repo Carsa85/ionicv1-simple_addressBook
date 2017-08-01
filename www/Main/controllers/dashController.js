@@ -30,6 +30,7 @@
 
     function _doLogout() {
       $ionicFacebookAuth.logout();
+      $state.go('login');
     }
   }
 

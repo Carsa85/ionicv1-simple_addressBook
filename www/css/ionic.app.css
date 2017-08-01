@@ -75,6 +75,43 @@ $dark:                            #444 !default;
     top: 50px;
     color: rgba(0, 0, 0, 0.07); }
 
+.login .item-floating-label .input-label {
+  font-size: 0.7rem; }
+
+.login .button.button-facebook {
+  border-color: transparent;
+  background-color: #4267b2;
+  color: #fff; }
+
+.login .button.button-facebook:hover {
+  color: #fff;
+  text-decoration: none; }
+
+.login .button.button-facebook.active, .login .button.button-facebook.activated {
+  border-color: #a2a2a2;
+  background-color: #29487d; }
+
+.login .button.button-gPlus {
+  border-color: transparent;
+  background-color: #b73223;
+  color: #fff; }
+
+.login .button.button-gPlus:hover {
+  color: #fff;
+  text-decoration: none; }
+
+.login .button.button-gPlus.active, .login .button.button-gPlus.activated {
+  border-color: #a2a2a2;
+  background-color: #d22612; }
+
+.signin img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%; }
+
+.signin .item-floating-label .input-label {
+  font-size: 0.7rem; }
+
 .contacts .mc-rounded {
   border-radius: 50%;
   padding: 4px;
@@ -9881,6 +9918,9 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.popup-container .popup {
+  background-color: #f8f8f8; }
 
 .mc-bg-color {
   /*background: $mc-background*/ }

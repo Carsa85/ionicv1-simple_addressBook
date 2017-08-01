@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1022665047528",
+    "project_id": "calm-buttress-175413"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022665047528:android:c38d2ee799fcc01c",
+        "android_client_info": {
+          "package_name": "com.ionicframework.ionicv1simpleaddressbook713527"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022665047528-e0qoo8lvoiudo32de3l3i7j5vvafnuk3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicframework.ionicv1simpleaddressbook713527",
+            "certificate_hash": "a38844a2d9a0ed7ca94f64a220c3665c2366f3dd"
+          }
+        },
+        {
+          "client_id": "1022665047528-86l7onritj1svp2rovug0ihk9b1sc58f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkf9UscZv4ZVZ-zoSXZFHNRM8bOuVR3KQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

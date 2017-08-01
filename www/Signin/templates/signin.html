@@ -1,0 +1,31 @@
+<ion-view view-title="Carsa address book">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title text-center">Carsa address book sign in</h1>
+  </ion-header-bar>
+  <ion-content class="padding signin">
+    <form name="signinForm">
+      <div class="list">
+        <div class="text-center">
+          <img ng-click="getImage()" ng-src="{{image}}">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="signinData.email" placeholder="Email" required>
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="signinData.password" placeholder="Password" required>
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Pepeat password</span>
+          <input type="password" ng-model="signinData.repeatPassword" placeholder="Pepeat password" required>
+        </div>
+        <div class="item">
+          <button ng-disabled="signinForm.$invalid || signinData.repeatPassword !== signinData.password" class="button button-block button-positive" ng-click="SigninCtrl.doSignIn()">Sign in</button>
+          <a ui-sref="login"><h3 class="text-center positive">Return to log in</h3></a>
+        </div>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>

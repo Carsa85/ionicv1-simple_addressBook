@@ -1,0 +1,33 @@
+.login {
+  .item-floating-label {
+    .input-label {
+      font-size: 0.7rem;
+    }
+  }
+  .button.button-facebook {
+    border-color: transparent;
+    background-color: #4267b2;
+    color: #fff;
+  }
+  .button.button-facebook:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .button.button-facebook.active, .button.button-facebook.activated {
+    border-color: #a2a2a2;
+    background-color: #29487d;
+  }
+  .button.button-gPlus {
+    border-color: transparent;
+    background-color: #b73223;
+    color: #fff;
+  }
+  .button.button-gPlus:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .button.button-gPlus.active, .button.button-gPlus.activated {
+    border-color: #a2a2a2;
+    background-color: #d22612;
+  }
+}
