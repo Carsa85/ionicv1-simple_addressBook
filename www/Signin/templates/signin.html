@@ -5,13 +5,27 @@
   <ion-content class="padding signin">
     <form name="signinForm">
       <div class="list">
-        <div class="text-center">
-          <img ng-click="getImage()" ng-src="{{image}}">
+        <div class="text-center padding">
+          <img ng-if="!image" ng-click="getImage()" ng-src="{{defaultImage}}">
+          <img ng-if="image" ng-click="getImage()" ng-src="{{image}}">
         </div>
+        <ion-list class="gender">
+          <ion-radio ng-click="SigninCtrl.setDefaultImage(signinData.gender)" ng-model="signinData.gender" ng-value="'G'">Generic</ion-radio>
+          <ion-radio ng-click="SigninCtrl.setDefaultImage(signinData.gender)" ng-model="signinData.gender" ng-value="'M'">Male</ion-radio>
+          <ion-radio ng-click="SigninCtrl.setDefaultImage(signinData.gender)" ng-model="signinData.gender" ng-value="'F'">Female</ion-radio>
+        </ion-list>
         <div class="item item-input item-floating-label">
           <span class="input-label">Email</span>
           <span ng-if="signinForm.email.$dirty && !signinData.email" class="error-message">Email required</span>
           <input name="email" type="email" ng-model="signinData.email" placeholder="Email" required>
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Name</span>
+          <input name="name" type="text" ng-model="signinData.name" placeholder="Name">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Surname</span>
+          <input name="surname" type="text" ng-model="signinData.surname" placeholder="Surname">
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">Password</span>
@@ -24,8 +38,11 @@
           <input name="rpwd" type="password" ng-model="signinData.repeatPassword" placeholder="Pepeat password">
         </div>
         <div class="item">
-          <button ng-disabled="signinForm.$invalid || signinData.repeatPassword !== signinData.password" class="button button-block button-positive" ng-click="SigninCtrl.doSignIn()">Sign in</button>
-          <a ui-sref="login"><h3 class="text-center positive">Return to log in</h3></a>
+          <button ng-disabled="signinForm.$invalid || signinData.repeatPassword !== signinData.password" class="button button-block button-positive"
+            ng-click="SigninCtrl.doSignIn()">Sign in</button>
+            <a ng-click="SigninCtrl.goToLogin()">
+              <h3 class="text-center positive">Return to log in</h3>
+            </a>
         </div>
       </div>
     </form>

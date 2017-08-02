@@ -2,7 +2,7 @@
 
 (function (angular) {
   angular
-    .module('AddressBookApp', ['ionic', 'Main', 'ionic.cloud'])
+    .module('AddressBookApp', ['ionic', 'Main', 'ionic.cloud', 'ngResource'])
 
     .config(function ($ionicCloudProvider) {
       $ionicCloudProvider.init({
@@ -16,6 +16,18 @@
           "google": {
             "webClientId": "WEB_CLIENT_ID",
             "scope": ["profile", "email"]
+          }
+        },
+        "push": {
+          "sender_id": "1022665047528",
+          "pluginConfig": {
+            "ios": {
+              "badge": true,
+              "sound": true
+            },
+            "android": {
+              "iconColor": "#343434"
+            }
           }
         }
       });

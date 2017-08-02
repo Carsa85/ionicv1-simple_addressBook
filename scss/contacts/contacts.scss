@@ -6,4 +6,17 @@
     right: 5px;
     bottom: 5px;
   }
+
+  ion-option-button.button {
+    min-width: 0px;
+  }
+
+  a.favourites {
+    font-size: 2rem;
+    float: right;
+    position: absolute;
+    top: 25%;
+    right: 15px;
+  }
+
 }

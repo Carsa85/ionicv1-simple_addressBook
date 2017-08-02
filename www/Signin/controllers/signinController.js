@@ -5,16 +5,17 @@
   angular.module('Signin')
     .controller('SigninController', SigninController);
   SigninController.$inject =
-    ['$scope', '$log', '$state', '$ionicAuth', '$ionicUser', '$timeout'];
+    ['$scope', '$log', '$state', '$ionicAuth', '$ionicUser', '$timeout', 'avatarUrlFilter', '$ionicPush'];
 
-  function SigninController($scope, $log, $state, $ionicAuth, $ionicUser, $timeout) {
+  function SigninController($scope, $log, $state, $ionicAuth, $ionicUser, $timeout, avatarUrlFilter, $ionicPush) {
 
     var vm = this;
 
     vm.doSignIn = _doSignIn;
-
-    $scope.signinData = {};
-    $scope.image = './img/UserAvatar.png';
+    vm.goToLogin = _goToLogin;
+    vm.setDefaultImage = _setDefaultImage;
+    vm.reset = _reset;
+    vm.init = _init;
 
     $scope.getImage = _getImage;
 
@@ -32,7 +33,8 @@
 
 
     function _getImage() {
-      var options = {
+
+      vm.cameraOptions = {
         quality: 80,
         destinationType: Camera.DestinationType.DATA_URL,
         sourceType: Camera.PictureSourceType.CAMERA,
@@ -45,21 +47,19 @@
         correctOrientation: true,
         cameraDirection: 1
       };
-      navigator.camera.getPicture(cameraSuccess, cameraError, options);
+
+      navigator.camera.getPicture(cameraSuccess, cameraError, vm.cameraOptions);
     }
 
     function _doSignIn() {
 
       $ionicAuth.signup($scope.signinData).then(function () {
-        var details = {'email': $scope.signinData.email, 'password': $scope.signinData.password};
+        var details = {
+          'email': $scope.signinData.email,
+          'password': $scope.signinData.password
+        };
 
-        $ionicAuth.login('basic', details).then(function (res) {
-          $log.debug(res);
-          $ionicUser.set('birthdate', '5/17/1985');
-          $ionicUser.set('myImage', $scope.image);
-          $ionicUser.save();
-          $state.go('logged.home');
-        });
+        _doLogin(details);
 
       }, function (err) {
         for (var e of err.details) {
@@ -72,16 +72,72 @@
       });
     }
 
+    function _setUserData() {
+      var userCustomData = {
+        'birthdate': $scope.signinData.birthdate || null,
+        'name': $scope.signinData.name || null,
+        'surname': $scope.signinData.surname || null,
+        'gender': $scope.signinData.gender || null,
+        'address': $scope.signinData.address || null,
+        'country': $scope.signinData.country || null,
+        'city': $scope.signinData.city || null,
+        'zipCode': $scope.signinData.zipCode || null,
+        'phon': $scope.signinData.phon || null
+      }
 
+      $ionicUser.set('userCustomData', userCustomData);
+      $ionicUser.set('myImage', $scope.image || null);
+      $ionicUser.save();
+    }
+
+    function _pushRegistration() {
+      $ionicPush.register().then(function (t) {
+        return $ionicPush.saveToken(t);
+      }).then(function (t) {
+        $log.debug('Token saved:', t.token);
+      });
+    }
+
+    function _doLogin(loginData) {
+      $ionicAuth.login('basic', loginData)
+        .then(function (response) {
+          $window.localStorage.setItem('token', response.token);
+          _setUserData();
+          _pushRegistration();
+          _init();
+          $log.debug(response);
+          $state.go('logged.home');
+        },
+        function (error) {
+          $log.debug(error);
+        });
+    }
+
+    function _goToLogin() {
+      _init();
+      $state.go('login');
+    }
+
+    function _setDefaultImage(gender) {
+      $scope.defaultImage = avatarUrlFilter(gender);
+    }
+
+    function _reset() {
+      $scope.signinData = {};
+      if ($scope.signinForm) {
+        $scope.signinForm.setPristine();
+      }
+    }
+
+    function _init() {
+      _reset();
+      $scope.signinData.gender = 'G';
+      $scope.defaultImage = avatarUrlFilter($scope.signinData.gender);
+      $scope.image = null;
+    }
+
+    _init();
 
   }
 
 })(angular);
-
-
-
-
-
-
-
-

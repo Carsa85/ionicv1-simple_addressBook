@@ -24,7 +24,7 @@
           <button class="button button-block button-facebook" ng-click="LoginCtrl.doFbLogin()"><i class="icon ion-social-facebook"></i></button>
           <button class="button button-block button-gPlus" ng-click="LoginCtrl.doGPlusLogin()"><i class="icon ion-social-googleplus-outline"></i></button>
           <p class="text-center">or</p>
-          <a ui-sref="signin"><h3 class="text-center positive">Simple sign in here</h3></a>
+          <a ng-click="LoginCtrl.goToSignin()"><h3 class="text-center positive">Simple sign in here</h3></a>
         </div>
       </div>
     </form>

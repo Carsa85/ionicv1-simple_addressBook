@@ -1,25 +1,32 @@
-<ion-view view-title="Carsa address book" class="contacts">
+<ion-view view-title="Contacts" class="contacts">
+  <ion-nav-buttons side="right" ng-show="false">
+    <button class="button button-icon button-clear ion-gear-a"></button>
+  </ion-nav-buttons>
   <ion-content class="">
     <ion-list>
-      <ion-item class="item-avatar-left">
+      <ion-item ng-repeat="item in ContactsCtrl.usersList" class="item-avatar-left ">
 
-        <img ng-src="{{item.img}}">
-        <h2>{{item.title}}</h2>
-        <p>{{item.description}}</p>
-        <ion-option-button class="button-positive" ng-click="share(item)">
-          Share
+        <img ng-if="!item.custom.myImage && item.type === 'ionic'" ng-src="{{item.defImage}}">
+        <img ng-if="item.custom.myImage" ng-src="{{item.custom.myImage}}">
+        <h2>{{item.type}} users</h2>
+        <p>created: {{item.created | date : 'dd MMM yyyy'}}</p>
+        <ion-option-button class="button-assertive" ng-click="delete(item)">
+          <i class="icon ion-trash-a"></i>
         </ion-option-button>
-        <ion-option-button class="button-info" ng-click="edit(item)">
-          Edit
+        <ion-option-button class="button-balanced" ng-click="edit(item)">
+          <i class="icon ion-edit"></i>
         </ion-option-button>
-        <ion-delete-button class="ion-minus-circled" ng-click="items.splice($index, 1)">
-        </ion-delete-button>
-        <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(item, $fromIndex, $toIndex)">
-        </ion-reorder-button>
+        <ion-option-button class="button-dark" ng-click="message(item)">
+          <i class="icon ion-chatbubble-working"></i>
+        </ion-option-button>
+        <ion-option-button class="button-positive" ng-if="item.custom.phone" ng-click="call(item)">
+          <i class="icon ion-ios-telephone"></i>
+        </ion-option-button>
+
+        <a class="favourites positive" ng-click="favourite=!favourite"><i class="icon" ng-class="{'ion-ios-star': favourite, 'ion-ios-star-outline': !favourite}"></i></a>
 
       </ion-item>
     </ion-list>
-
 
   </ion-content>
   <button class="button button-positive icon ion-plus-round mc-rounded"></button>

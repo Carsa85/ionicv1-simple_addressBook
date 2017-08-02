@@ -15,11 +15,14 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+
+
 $mc-background: #c5cbbd !default;
 $mc-dark: #2d2e2d !default;
 $mc-light: #d9ddd4 !default;
 $mc-primary: #818f6e !default;
 $mc-secondary: #8b927f !default;
+$mc-grey: #d0d0d0 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -36,7 +39,67 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.popup {
+  border-radius: 5px !important;
+  .popup-head {
+    background: $positive;
+    border-radius: 5px 5px 0px 0px;
+    padding: 5px;
+
+    .popup-title {
+      color: $light
+    }
+    .popup-sub-title {
+      color: $light
+    }
+  }
+  .popup-body {
+    textarea {
+      min-height: 250px;
+    }
+  }
+  .popup-buttons {
+    border-radius: 0px 0px 5px 5px;
+  }
+}
+
+a.modal-close-button {
+  border: 2px solid $assertive;
+  border-radius: 50% !important;
+  color: $assertive;
+  float: right;
+}
+
 form {
+  .list{
+    border-top: 1px solid $mc-grey;
+    border-left: 1px solid $mc-grey;
+    border-right: 1px solid $mc-grey;
+  }
+
+  .gender {
+    border: 0;
+    .list {
+      border: 0;
+      padding: 3px;
+      .item-radio {
+        border: 0;
+        .radio-content {
+          .item-content {
+            padding: 5px 20px;
+            color: $positive;
+          }
+          .radio-icon {
+            padding: 5px;
+            margin-right: 15px;
+            font-size: 1rem;
+            color: $positive;
+          }
+        }
+      }
+    }
+  }
+
   .item-floating-label {
     .error-message {
       font-size: 0.7rem;
@@ -51,8 +114,12 @@ form {
     }
   }
   .item-input {
+    border: 0px;
     padding: 5px;
-    .ng-dirty.ng-invalid {
+    input {
+      border-bottom: 1px solid $mc-grey;
+    }
+    input.ng-dirty.ng-invalid {
       border-bottom: 2px solid $assertive;
       color: $assertive;
     }
