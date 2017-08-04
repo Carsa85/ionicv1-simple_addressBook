@@ -34,6 +34,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "login/login";
 @import "signin/signin";
 @import "contacts/contacts";
+@import "favourites/favourites";
 
 
 // Include all of Ionic
@@ -126,8 +127,6 @@ form {
   }
 }
 
-
-
 .popup-container .popup {
   background-color: #f8f8f8;
 }
@@ -137,5 +136,63 @@ form {
   /*background: $mc-background*/
 }
 
+.mc-rounded {
+    height: 52px !important;
+    width: 52px;
+    border-radius: 50%;
+    padding:4px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
+  }
 
+/*calendar*/
 
+.fc-toolbar {
+  margin-bottom: 0 !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  h2 {
+    color: $positive;
+    font-size: 1.3rem;
+  }
+  .fc-left {
+    width: 100%;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    button {
+      background: $positive;
+      color: $light;
+      width: 18.5%;
+      margin: 2px;
+    }
+  }
+  .fc-right {
+    width: 100%;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    button {
+      background: $assertive;
+      color: $light;
+    }
+  }
+  .fc-center {
+    width: 100%;
+    display: inline-grid !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.fc-view-container {
+  padding-left: 5px;
+  padding-right: 5px;
+}

@@ -1,0 +1,57 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Profile</h1>
+    <div class="buttons button-right">
+      <button class="button button-clear button-primary" ng-click="closeProfile(false)"><i class="icon ion-ios-close-outline"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="signin">
+      <div class="list">
+        <div class="text-center padding">
+          <img ng-if="!yourUser.custom.myImage" ng-click="getImage()" ng-src="{{defaultImage}}">
+          <img ng-if="yourUser.custom.myImage" ng-click="getImage()" ng-src="{{yourUser.custom.myImage}}">
+        </div>
+        <ion-list class="gender">
+          <ion-radio ng-click="setDefaultImage(yourUser.custom.userCustomData.gender)" ng-model="yourUser.custom.userCustomData.gender" ng-value="'G'">Generic</ion-radio>
+          <ion-radio ng-click="setDefaultImage(yourUser.custom.userCustomData.gender)" ng-model="yourUser.custom.userCustomData.gender" ng-value="'M'">Male</ion-radio>
+          <ion-radio ng-click="setDefaultImage(yourUser.custom.userCustomData.gender)" ng-model="yourUser.custom.userCustomData.gender" ng-value="'F'">Female</ion-radio>
+        </ion-list>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Name</span>
+          <input type="text" ng-model="yourUser.custom.userCustomData.name" placeholder="Name">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">Surname</span>
+          <input type="text" ng-model="yourUser.custom.userCustomData.surname" placeholder="Surname">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">phon</span>
+          <input type="tel" ng-model="yourUser.custom.userCustomData.phon" placeholder="phon">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">address</span>
+          <input type="text" ng-model="yourUser.custom.userCustomData.address" placeholder="address">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">country</span>
+          <input type="text" ng-model="yourUser.custom.userCustomData.country" placeholder="country">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">city</span>
+          <input type="text" ng-model="yourUser.custom.userCustomData.city" placeholder="city">
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">zipCode</span>
+          <input type="tel" ng-model="yourUser.custom.userCustomData.zipCode" placeholder="zipCode">
+        </div>
+
+        <div class="item">
+           <button class="button button-assertive button-block" ng-click="closeProfile(false)">Cancel</button>
+    <button class="button button-positive button-block" ng-click="closeProfile(true)">Edit your profile</button>
+        </div>
+
+      </div>
+
+  </ion-content>
+
+</ion-modal-view>

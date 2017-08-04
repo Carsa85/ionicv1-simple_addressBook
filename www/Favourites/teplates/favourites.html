@@ -1,5 +1,58 @@
-<ion-view view-title="Carsa address book">
-  <ion-content class="padding mc-bg-color">
+<ion-view view-title="Favourits cosntacts" class="favourites">
+  <ion-content class="">
+    <ion-slides options="options" slider="data.slider">
+      <ion-slide-page ng-if="filtered.length === 0">
+        <div class="padding text-center">
+          <h5 class="assertive">No favorites contact</h5>
+          <p class="">Add favourites to create your list</p>
+          <p class="">for add favourites press star button in contact list</p>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page ng-repeat="item in FavouritesCtrl.favouritesList | filter : { 'isFavourite' : true} as filtered">
+
+        <div class="card">
+
+          <div class="item item-avatar" ng-class="{'male': item.custom.userCustomData.gender === 'M',
+          'female': item.custom.userCustomData.gender === 'F',
+          'generic': item.custom.userCustomData.gender === 'G' || !item.custom.userCustomData.gender }">
+            <img ng-if="!item.custom.myImage && item.type === 'ionic'" ng-src="{{item.defImage}}">
+            <img ng-if="item.custom.myImage" ng-src="{{item.custom.myImage}}">
+            <h2>{{item.type}} users</h2>
+            <p>Name: {{item.custom.userCustomData.name || '' + ' ' + item.custom.userCustomData.surname || ''}}</p>
+        </div>
+
+        <div class="item item-body">
+
+          <ion-list>
+            <ion-item>
+              Birthdate: {{item.custom.userCustomData.birthdate || 'no set'}}
+            </ion-item>
+            <ion-item>
+              Phone: {{item.custom.userCustomData.phone || 'no set'}}
+            </ion-item>
+            <ion-item>
+              Address: {{item.custom.userCustomData.address || 'no set'}}
+            </ion-item>
+            <ion-item>
+              Country: {{item.custom.userCustomData.country || 'no set'}}
+            </ion-item>
+            <ion-item>
+              City: {{item.custom.userCustomData.city || 'no set'}}
+            </ion-item>
+          </ion-list>
+
+          <div class="button-bar">
+            <a class="button positive icon ion-android-attach"></a>
+            <a ng-click="item.isFavourite=false;delFromFavourits(item)" class="button assertive icon ion-trash-b"></a>
+            <a class="button dark icon ion-chatbubble-working" ng-click="message(item)"></a>
+            <a class="button balanced icon ion-ios-telephone" href="tel:{{item.custom.userCustomData.phone}}" ng-if="item.custom.userCustomData.phone && item.custom.userCustomData.phone !== ''"></a>
+          </div>
+        </div>
+
+        </div>
+      </ion-slide-page>
+    </ion-slides>
 
   </ion-content>
+
 </ion-view>

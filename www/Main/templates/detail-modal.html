@@ -1,11 +1,23 @@
 <ion-modal-view>
   <ion-header-bar class="bar-positive">
-    <h1 class="title">My Modal title</h1>
+    <h1 class="title">Dash detail</h1>
     <div class="buttons button-right">
       <button class="button button-clear button-primary" ng-click="closeDetail()"><i class="icon ion-ios-close-outline"></i></button>
     </div>
   </ion-header-bar>
   <ion-content class="padding">
-    Hello!
+    <div class="item text-center">
+      <h2>Angular chart example</h2>
+
+      <p>create your chart</p>
+    </div>
+    <div class="item">
+      <canvas id="doughnut" class="chart chart-doughnut" chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options">
+      </canvas>
+    </div>
+    <div class="item text-center">
+      <p>Enjoy and add more options for your charts</p>
+      <a href="http://jtblin.github.io/angular-chart.js/">Documentation</a>
+    </div>
   </ion-content>
 </ion-modal-view>

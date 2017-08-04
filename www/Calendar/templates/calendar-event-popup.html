@@ -1,0 +1,29 @@
+<div class="item item-input item-floating-label">
+  <span class="input-label">Appointment title</span>
+  <input name="title" type="text" ng-model="data.title" placeholder="Appointment title">
+</div>
+<div class="item item-input item-floating-label">
+  <span class="input-label">Appointment message</span>
+  <input name="message" type="text" ng-model="data.message" placeholder="Appointment message">
+</div>
+
+<div class="item item-input item-stacked-label">
+  <span class="input-label">Start Date</span>
+  <input name="start" type="date" ng-model="data.start" placeholder="">
+</div>
+
+<div class="item item-input item-stacked-label">
+  <span class="input-label">End Date</span>
+  <input name="end" type="date" ng-model="data.end" placeholder="">
+</div>
+
+
+<div class="list">
+
+  <ion-checkbox ng-repeat="item in contactList" ng-model="item.checked" ng-checked="item.checked">
+    {{ item.text }}
+  </ion-checkbox>
+
+
+
+</div>

@@ -1,22 +1,22 @@
 <ion-view view-title="Dashboard">
   <ion-nav-buttons side="right" ng-show="false">
-    <button class="button button-icon button-clear ion-android-happy"></button>
+    <button ng-click="openProfile()" class="button button-icon button-clear ion-android-happy"></button>
   </ion-nav-buttons>
   <ion-content class="padding mc-bg-color">
     <div class="row">
       <div class="col">
-        <dash-card card-type="1" title="Contatti" bedge="200" bg-icon="" on-swipe-up="openDetail()" ng-click=""></dash-card>
+        <dash-card card-type="1" title="Contacts" bedge="{{bedge.contacts}}" bg-icon="" on-swipe-up="openDetail()" ng-click="goTo('logged.contacts')"></dash-card>
       </div>
       <div class="col">
-        <dash-card card-type="2" title="Preferiti" bedge="99" bg-icon=""></dash-card>
+        <dash-card card-type="2" title="Favourites" bedge="{{bedge.favourites}}" bg-icon="" on-swipe-up="openDetail()" ng-click="goTo('logged.favourites')"></dash-card>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <dash-card card-type="3" title="Messaggi" bedge="10" bg-icon=""></dash-card>
+        <dash-card card-type="3" title="Message" bedge="200" bg-icon="" on-swipe-up="openDetail()" ng-click=""></dash-card>
       </div>
       <div class="col">
-        <dash-card card-type="4" title="Appuntamenti" bedge="5" bg-icon=""></dash-card>
+        <dash-card card-type="4" title="Appointment" bedge="{{bedge.events}}" bg-icon="" on-swipe-up="openDetail()" ng-click="goTo('logged.calendar')"></dash-card>
       </div>
     </div>
   </ion-content>

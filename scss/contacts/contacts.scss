@@ -1,11 +1,4 @@
 .contacts {
-  .mc-rounded {
-    border-radius: 50%;
-    padding:4px;
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-  }
 
   ion-option-button.button {
     min-width: 0px;
@@ -16,7 +9,19 @@
     float: right;
     position: absolute;
     top: 25%;
-    right: 15px;
+    right: 10px;
+  }
+
+  a.telephone {
+    font-size: 2rem;
+    float: right;
+    position: absolute;
+    top: 22px;
+    right: 50px;
+  }
+
+  .yourUser {
+    background: #ddd;
   }
 
 }

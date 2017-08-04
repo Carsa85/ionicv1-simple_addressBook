@@ -8,12 +8,23 @@
     })
     .factory('UserService', ['$resource', 'USER_SERVICES', function ($resource, USER_SERVICES) {
 
-      return $resource(USER_SERVICES.RELATIVE_URL , {
-
+      return $resource(USER_SERVICES.RELATIVE_URL + "/:status/:id", {
+        id: '@id',
+        status: 'status'
       }, {
           usersList: {
             method: 'GET',
-            params: {}
+            params: {
+              status: null,
+              id: null
+            }
+          },
+          user: {
+            method: 'GET',
+            params: {
+              status: null,
+              id: null
+            }
           }
         });
 

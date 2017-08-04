@@ -10,7 +10,7 @@ angular
           url: '/calendar',
           views: {
             'menuContent': {
-              templateUrl: 'Calendar/teplates/calendar.html',
+              templateUrl: 'Calendar/templates/calendar.html',
               controller: 'CalendarController as CalendarCtrl'
             }
           }

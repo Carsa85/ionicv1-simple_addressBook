@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Contacts list</h1>
+    <div class="buttons button-right">
+      <button class="button button-clear button-primary" ng-click="closeContacts()"><i class="icon ion-ios-close-outline"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="">
+    <ion-list>
+      <ion-item ng-repeat="item in ContactsCtrl.usersList | inArray:ContactsCtrl.myUsersList:'uuid' as filtered" class="item-avatar-left">
+
+        <img ng-if="!item.custom.myImage && item.type === 'ionic'" ng-src="{{item.defImage}}">
+        <img ng-if="item.custom.myImage" ng-src="{{item.custom.myImage}}">
+        <h2>{{item.type}} users</h2>
+        <p>created: {{item.created | date : 'dd MMM yyyy'}}</p>
+        <ion-option-button class="button-balanced" ng-click="addUser(item)">
+          <i class="icon ion-ios-plus"></i>
+        </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+
+    <div class="padding text-center" ng-if="filtered.length === 0">
+      <h4 class="positive">No more contact to dislpay</h4>
+    </div>
+    <div class="item" ng-if="filtered.length === 0">
+      <button class="button button-assertive button-block" ng-click="closeContacts()">esci</button>
+    </div>
+
+    </div>
+
+</ion-modal-view>

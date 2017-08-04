@@ -5,9 +5,9 @@
   angular.module('Signin')
     .controller('SigninController', SigninController);
   SigninController.$inject =
-    ['$scope', '$log', '$state', '$ionicAuth', '$ionicUser', '$timeout', 'avatarUrlFilter', '$ionicPush'];
+    ['$scope', '$log', '$state', '$ionicAuth', '$ionicUser', '$timeout', 'avatarUrlFilter', '$ionicPush', '$window'];
 
-  function SigninController($scope, $log, $state, $ionicAuth, $ionicUser, $timeout, avatarUrlFilter, $ionicPush) {
+  function SigninController($scope, $log, $state, $ionicAuth, $ionicUser, $timeout, avatarUrlFilter, $ionicPush, $window) {
 
     var vm = this;
 
@@ -82,7 +82,7 @@
         'country': $scope.signinData.country || null,
         'city': $scope.signinData.city || null,
         'zipCode': $scope.signinData.zipCode || null,
-        'phon': $scope.signinData.phon || null
+        'phone': $scope.signinData.phone || null
       }
 
       $ionicUser.set('userCustomData', userCustomData);
@@ -114,7 +114,6 @@
     }
 
     function _goToLogin() {
-      _init();
       $state.go('login');
     }
 

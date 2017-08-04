@@ -106,13 +106,6 @@ $dark:                            #444 !default;
   width: 100px;
   border-radius: 50%; }
 
-.contacts .mc-rounded {
-  border-radius: 50%;
-  padding: 4px;
-  position: absolute;
-  right: 5px;
-  bottom: 5px; }
-
 .contacts ion-option-button.button {
   min-width: 0px; }
 
@@ -121,7 +114,26 @@ $dark:                            #444 !default;
   float: right;
   position: absolute;
   top: 25%;
-  right: 15px; }
+  right: 10px; }
+
+.contacts a.telephone {
+  font-size: 2rem;
+  float: right;
+  position: absolute;
+  top: 22px;
+  right: 50px; }
+
+.contacts .yourUser {
+  background: #ddd; }
+
+.favourites .male {
+  background: rgba(0, 199, 255, 0.5); }
+
+.favourites .female {
+  background: rgba(234, 159, 172, 0.5); }
+
+.favourites .generic {
+  background: rgba(230, 143, 0, 0.5); }
 
 /*!
   Ionicons, v2.0.1
@@ -9990,3 +10002,55 @@ form .item-input {
 
 .mc-bg-color {
   /*background: $mc-background*/ }
+
+.mc-rounded {
+  height: 52px !important;
+  width: 52px;
+  border-radius: 50%;
+  padding: 4px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  z-index: 1; }
+
+/*calendar*/
+.fc-toolbar {
+  margin-bottom: 0 !important;
+  padding-left: 5px;
+  padding-right: 5px; }
+  .fc-toolbar h2 {
+    color: #387ef5;
+    font-size: 1.3rem; }
+  .fc-toolbar .fc-left {
+    width: 100%;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    .fc-toolbar .fc-left button {
+      background: #387ef5;
+      color: #fff;
+      width: 18.5%;
+      margin: 2px; }
+  .fc-toolbar .fc-right {
+    width: 100%;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px; }
+    .fc-toolbar .fc-right button {
+      background: #ef473a;
+      color: #fff; }
+  .fc-toolbar .fc-center {
+    width: 100%;
+    display: inline-grid !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px; }
+
+.fc-view-container {
+  padding-left: 5px;
+  padding-right: 5px; }

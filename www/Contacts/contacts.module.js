@@ -10,7 +10,7 @@ angular
           url: '/contacts',
           views: {
             'menuContent': {
-              templateUrl: 'Contacts/teplates/contacts.html',
+              templateUrl: 'Contacts/templates/contacts.html',
               controller: 'ContactsController as ContactsCtrl'
             }
           }

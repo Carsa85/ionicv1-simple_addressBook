@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
 
-    <link rel="manifest" href="manifest.json">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <!-- un-comment this code to enable service worker
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
@@ -17,52 +18,68 @@
     </script>-->
 
 
-    <!-- compiled css output -->
-    <link href="css/ionic.app.css" rel="stylesheet">
+  <!-- compiled css output -->
+  <link href="css/ionic.app.css" rel="stylesheet">
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ionic/js/angular/angular-resource.min.js"></script>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic/js/angular/angular-resource.min.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="app.js"></script>
-    <script src="lib/bluebird.min.js"></script>
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ionic.cloud.min.js"></script>
-    <!--Modules-->
-    <script src="Main/main.module.js"></script>
-    <script src="Login/login.module.js"></script>
-    <script src="Signin/signin.module.js"></script>
-    <script src="Contacts/contacts.module.js"></script>
-    <script src="Calendar/calendar.module.js"></script>
-    <script src="Message/message.module.js"></script>
-    <script src="Favourites/favourites.module.js"></script>
-    <!--Controllers-->
-    <script src="Login/controllers/loginController.js"></script>
-    <script src="Signin/controllers/signinController.js"></script>
-    <script src="Main/controllers/dashController.js"></script>
-    <script src="Contacts/controllers/contactsController.js"></script>
-    <script src="Calendar/controllers/calendarController.js"></script>
-    <script src="Message/controllers/messageController.js"></script>
-    <script src="Favourites/controllers/favouritesController.js"></script>
-    <!--Directives-->
-    <script src="Main/directives/dash-card.directive.js"></script>
-    <!--Filters-->
-    <script src="Main/filters/avatar.filter.js"></script>
-    <!--Services-->
-    <script src="Main/services/user-srv.js"></script>
-    <script src="Main/services/push-srv.js"></script>
-    <script src="Main/services/notification-center.js"></script>
-    <!--Interceptors-->
-    <script src="Main/interceptors/base-url.interceptor.js"></script>
+  <!-- your app's js -->
+  <script src="app.js"></script>
+  <script src="lib/bluebird.min.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic.cloud.min.js"></script>
+
+  <!-- chart -->
+
+  <script src="lib/chart.js/dist/Chart.min.js"></script>
+  <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
+
+  <link rel="stylesheet" href="lib/fullcalendar/dist/fullcalendar.css">
+  <!-- jquery, moment, and angular have to get included before fullcalendar -->
+  <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="lib/angular-ui-calendar/src/calendar.js"></script>
+  <script type="text/javascript" src="lib/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="lib/fullcalendar/dist/gcal.js"></script>
+
+  <!--Modules-->
+  <script src="Main/main.module.js"></script>
+  <script src="Login/login.module.js"></script>
+  <script src="Signin/signin.module.js"></script>
+  <script src="Contacts/contacts.module.js"></script>
+  <script src="Calendar/calendar.module.js"></script>
+  <script src="Message/message.module.js"></script>
+  <script src="Favourites/favourites.module.js"></script>
+  <!--Controllers-->
+  <script src="Login/controllers/loginController.js"></script>
+  <script src="Signin/controllers/signinController.js"></script>
+  <script src="Main/controllers/dashController.js"></script>
+  <script src="Contacts/controllers/contactsController.js"></script>
+  <script src="Calendar/controllers/calendarController.js"></script>
+  <script src="Message/controllers/messageController.js"></script>
+  <script src="Favourites/controllers/favouritesController.js"></script>
+  <!--Directives-->
+  <script src="Main/directives/dash-card.directive.js"></script>
+  <!--Filters-->
+  <script src="Main/filters/avatar.filter.js"></script>
+  <!--Services-->
+  <script src="Main/services/user-srv.js"></script>
+  <script src="Main/services/push-srv.js"></script>
+  <script src="Main/services/notification-center.js"></script>
+  <!--Interceptors-->
+  <script src="Main/interceptors/base-url.interceptor.js"></script>
 
 
-  </head>
+</head>
 
-  <body ng-app="AddressBookApp">
-    <ion-nav-view></ion-nav-view>
-  </body>
+<body ng-app="AddressBookApp">
+  <ion-nav-view></ion-nav-view>
+</body>
+
 </html>
